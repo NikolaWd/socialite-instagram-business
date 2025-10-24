@@ -65,7 +65,7 @@ class InstagramBusinessProvider extends AbstractProvider
             $queryParameters['appsecret_proof'] = hash_hmac('sha256', $token, $this->clientSecret);
         }
 
-        $response = $this->getHttpClient()->get('https://graph.instagram.com/v20.0/me', [
+        $response = $this->getHttpClient()->get('https://graph.instagram.com/v24.0/me', [
             RequestOptions::HEADERS => [
                 'Accept' => 'application/json',
             ],
