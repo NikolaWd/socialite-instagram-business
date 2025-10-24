@@ -54,7 +54,7 @@ class InstagramBusinessProvider extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected function getUserByToken($token)
+    protected function getUserByToken($token, string $meta_api_version)
     {
         $queryParameters = [
             'access_token' => $token,
@@ -65,7 +65,7 @@ class InstagramBusinessProvider extends AbstractProvider
             $queryParameters['appsecret_proof'] = hash_hmac('sha256', $token, $this->clientSecret);
         }
 
-        $response = $this->getHttpClient()->get('https://graph.instagram.com/v20.0/me', [
+        $response = $this->getHttpClient()->get("https://graph.instagram.com/$meta_api_version/me", [
             RequestOptions::HEADERS => [
                 'Accept' => 'application/json',
             ],
