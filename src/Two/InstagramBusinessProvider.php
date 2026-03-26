@@ -30,7 +30,7 @@ class InstagramBusinessProvider extends AbstractProvider
     /**
      * {@inheritdoc}
      */
-    protected $scopes = ['business_basic'];
+    protected $scopes = ['instagram_business_basic'];
 
     /**
      * {@inheritdoc}
